@@ -1,5 +1,5 @@
 // Cuenta regresiva hasta el 20 diciembre 2025 19:00
-const targetDate = new Date('2026-02-21T19:00:00-05:00').getTime(); //[web:22]
+const targetDate = new Date('2026-07-18T19:00:00-05:00').getTime(); //[web:22]
 
 function updateCountdown() {
   const now = new Date().getTime();
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!btnConfirmar) return;
 
   btnConfirmar.addEventListener('click', () => {
-    const telefono = '573185983084'; // +57 3123051384 sin signos
+    const telefono = '573507615820'; // +57 3123051384 sin signos
     const mensaje = 'Confirmo mi asistencia';
     const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
