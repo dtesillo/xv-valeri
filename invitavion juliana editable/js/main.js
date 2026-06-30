@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!btnConfirmar) return;
 
   btnConfirmar.addEventListener('click', () => {
-    const telefono = '573185983084'; // +57 3123051384 sin signos
+    const telefono = '573123051384'; // +57 3123051384 sin signos
     const mensaje = 'Confirmo mi asistencia';
     const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');

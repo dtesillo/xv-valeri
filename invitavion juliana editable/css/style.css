@@ -155,10 +155,10 @@ body > *:not(.butterfly-layer) {
   text-align: center;
   color: #fff;
 
-  background-image: url('../img/portada-og.webp');
-  background-size: 400px;
+  background-image: url('../img/Fondo.png');
+  background-size:400px;
   background-repeat: no-repeat;
-  background-position: left bottom;
+  background-position:left bottom ;
   
 }
 
@@ -181,19 +181,21 @@ body > *:not(.butterfly-layer) {
 }
 
 .hero-subtitle {
-  font-family: 'Kaushan','Kaushan ', normal;
-  font-size: 45px;
+  font-family: 'Kaushan Script','Kaushan Script Fallback', normal;
+  font-size: 30px;
   color: #ffffff;
   margin: 0 0 4px;
+  padding: 0 20px;
   letter-spacing: 1px;
-  position:relative;
-  top: -80px;
 }
 
 .hero-name {
-  font-family: 'Great Vibes','Great Vibes Fallback';
+  font-family: 'Celebrate';
+  src: url('../font/celebrate.ttf') format('truetype');
+    font-weight: normal;
+  font-style: normal;
   font-weight: 400;
-  font-size: 114px;
+  font-size: 120px;
   font-style: normal;
   margin: 0 0 8px;
   line-height: 1.05;
@@ -202,10 +204,10 @@ body > *:not(.butterfly-layer) {
 .hero-time,
 .hero-date {
   font-family: 'Great Vibes', 'Great Vibes Fallback';
-  font-size: 56px;
+  font-size: 36px;
   color: #ffffff;
   margin: 0;
-  font-size: 55px;
+  font-size: 45px;
 }
 
 /* Títulos script */
@@ -510,7 +512,7 @@ body > *:not(.butterfly-layer) {
 /* Formularios y botones */
 .rsvp-form {
   max-width: 500px;
-  margin: 40px auto 0;
+  margin: 20px auto 0;
 }
 
 .input {
@@ -526,7 +528,7 @@ body > *:not(.butterfly-layer) {
 .buttons-row {
   display: flex;
   flex-direction: column;
-  gap: 82px;
+  gap: 12px;
 }
 
 /* estilo base de los botones RSVP */
@@ -538,7 +540,7 @@ body > *:not(.butterfly-layer) {
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  font-size: 300px;
+  font-size: 30px;
   font-family: 'Didact Gothic', system-ui, sans-serif;
   background:#ffffff;
   color: #000;
@@ -551,7 +553,6 @@ body > *:not(.butterfly-layer) {
 .btn.ghost {
   background: var(--accent-soft);
   color: #000;
-  font-size: 70px;
 }
 
 /* último como enlace subrayado */
@@ -629,11 +630,11 @@ body > *:not(.butterfly-layer) {
 
   /* Textos generales */
   .text-small {
-    font-size: 62px;
+    font-size: 42px;
   }
 
   .title-script {
-    font-size: 100px;      /* “Itinerario”, “Confirmación de asistencia”, etc. */
+    font-size: 70px;      /* “Itinerario”, “Confirmación de asistencia”, etc. */
   }
 
   /* Itinerario */
@@ -682,7 +683,7 @@ body > *:not(.butterfly-layer) {
   }
 
   .buttons-row {
-    gap: 52px;
+    gap: 12px;
   }
 
   /* Itinerario en una columna */
@@ -708,7 +709,9 @@ body > *:not(.butterfly-layer) {
   .timeline-row .icon {
     display: none;
   }
-  @media (min-width: 300px) {
-    body { font-size: 16px; }
+  @media (max-width: 600px) {
+    .hero-content {
+      transform: translateY(20px);
+    }
   }
   
