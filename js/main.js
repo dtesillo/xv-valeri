@@ -1,5 +1,4 @@
-// Cuenta regresiva hasta el 20 diciembre 2025 19:00
-const targetDate = new Date('2025-12-20T19:00:00-05:00').getTime(); //[web:22]
+const targetDate = new Date('2026-07-18T19:00:00-05:00').getTime(); //[web:22]
 
 function updateCountdown() {
   const now = new Date().getTime();
