@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>XV Años Valeri</title>
+  <meta property="og:title" content="XV Años Valeri">
+  <meta property="og:description" content="Te invitamos a celebrar los XV años de Valeri.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dtesillo.github.io/xv-valeri/">
+  <meta property="og:image" content="https://dtesillo.github.io/xv-valeri/img/portada-og.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <!-- Twitter Card (opcional) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="XV Años Valeri">
+  <meta name="twitter:description" content="Te invitamos a celebrar una noche especial.">
+  <meta name="twitter:image" content="https://inspiring-buttercream-f0b490.netlify.app/img/portada-og.webp">
+  <!-- Tipos de letra -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Great+Vibes&family=Didact+Gothic&display=swap">
+
+</head>
+<body>
+  <div class="butterfly-layer"></div>
+  <div class="butterflies">
+    <span class="butterfly b1"><img src="img/mariposa.png" alt=""></span>
+    <span class="butterfly b2"><img src="img/mariposa.png" alt=""></span>
+    <span class="butterfly b3"><img src="img/mariposa.png" alt=""></span>
+    <span class="butterfly b4"><img src="img/mariposa.png" alt=""></span>
+  </div>
+  <!-- HERO / PORTADA -->
+  <header class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle">XV Años</p>
+      <h1 class="hero-name">Valeri</h1>
+      <p class="hero-date">18 de Julio de 20256</p>
+      <p class="hero-time">07:00 pm</p>
+    </div>
+  </header>
+
+  <!-- LUGAR / MAPA -->
+  <section class="section section-light" id="lugar">
+    <span class="pin"></span>
+    <h2 class="title-script">Villa Palmera</h2>
+    <p class="text-small">Cl. 10 # 20-125 Sabanalarga Atlántico</p>
+
+    <!-- aquí luego pegas tu iframe de Google Maps -->
+    <div class="map-placeholder">
+      <p ><iframe
+        src="https://maps.google.com/maps?q=Cra.%2019%20%2320-7%20Sabanalarga%20Atlantico&output=embed"
+        width="100%"
+        height="350"
+        style="border:0;"
+        loading="lazy">
+      </iframe></p>
+    </div>
+  </section>
+
+  <!-- CÓDIGO DE VESTIMENTA -->
+  <section class="section section-dark" id="codigo">
+    <div class="icon-wrapper">
+      <span class="icon-hanger">🧥</span>
+    </div>
+    <h2 class="title-script">Código de vestimenta</h2>
+    <p class="text-small">Elegante</p>
+    <p class="text-small">Se reserva todo tipo de tono azul</p>
+    <p class="text-small">
+      <button type="button" class="link-like" id="btnVestimenta">
+        Ver ejemplo de vestimenta
+      </button>
+    </p>
+  </section>
+
+  <div id="modalVestimenta" class="modal hidden">
+    <div class="modal-content">
+      <span class="modal-close" id="closeVestimenta">&times;</span>
+      <img src="img/Vestimenta.webp" alt="Ejemplo de vestimenta" loading="lazy"/>
+    </div>
+  </div>
+
+  <!-- GALERÍA TIPO TARJETAS APILADAS -->
+  <section class="section section-dark" id="galeria">
+    <div class="cards-stack draggable-stack">
+      <div class="card-photo card-photo-1"></div>
+      <div class="card-photo card-photo-2"></div>
+      <div class="card-photo card-photo-3"></div>
+      <div class="card-photo card-photo-4"></div>
+      <div class="card-photo card-photo-5"></div>
+      <div class="card-photo card-photo-6"></div>
+    </div>
+    <div class="swipe-hint" id="swipeHint">
+      <span class="swipe-icon">↕</span>
+      <span class="swipe-text">Desliza para ver más fotos</span>
+    </div>
+  </section>
+
+  <!-- ITINERARIO EN LÍNEA DE TIEMPO -->
+  <section class="section section-light" id="itinerario">
+    <h2 class="title-script">Itinerario</h2>
+  
+    <div class="timeline fancy-timeline">
+      <!-- 1 -->
+      <div class="timeline-row left">
+        <div class="time-block">
+          <span class="time">07:00 pm</span>
+          <span class="label">Recepción</span>
+        </div>
+        <div class="dot"></div>
+        <div class="icon">📅</div>
+      </div>
+  
+      <!-- 2 -->
+      <div class="timeline-row right">
+        <div class="icon">🥂</div>
+        <div class="dot"></div>
+        <div class="time-block">
+          <span class="time">08:00 pm</span>
+          <span class="label">Brindis</span>
+        </div>
+      </div>
+  
+      <!-- 3 -->
+      <div class="timeline-row left">
+        <div class="time-block">
+          <span class="time">08:15 pm</span>
+          <span class="label">Baile y cambio de zapatillas</span>
+        </div>
+        <div class="dot"></div>
+        <div class="icon">✨</div>
+      </div>
+  
+      <!-- 4 -->
+      <div class="timeline-row right">
+        <div class="icon">📸</div>
+        <div class="dot"></div>
+        <div class="time-block">
+          <span class="time">08:30 pm</span>
+          <span class="label">Sesión fotográfica</span>
+        </div>
+      </div>
+  
+      <!-- 5 -->
+      <div class="timeline-row left">
+        <div class="time-block">
+          <span class="time">09:00 pm</span>
+          <span class="label">Fiesta</span>
+        </div>
+        <div class="dot"></div>
+        <div class="icon">🎉</div>
+      </div>
+  
+      <!-- 6 -->
+      <div class="timeline-row right">
+        <div class="icon">🌙</div>
+        <div class="dot"></div>
+        <div class="time-block">
+          <span class="time">02:00 am</span>
+          <span class="label">Fin de fiesta</span>
+        </div>
+      </div>
+  
+      <!-- línea vertical -->
+      <div class="center-line"></div>
+    </div>
+  </section>
+
+  <!-- CONTADOR -->
+  <section class="section section-dark" id="contador">
+    <h2 class="title2-script">LLUVIA DE SOBRES</h2>
+    <div id="countdown" class="countdown countdown-cards">
+      <div class="count-card">
+        <div class="count-number" id="days">00</div>
+        <div class="count-label">Días</div>
+      </div>
+      <div class="count-card">
+        <div class="count-number" id="hours">00</div>
+        <div class="count-label">Horas</div>
+      </div>
+      <div class="count-card">
+        <div class="count-number" id="minutes">00</div>
+        <div class="count-label">Minutos</div>
+      </div>
+      <div class="count-card">
+        <div class="count-number" id="seconds">00</div>
+        <div class="count-label">Segundos</div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- CONFIRMACIÓN / RSVP -->
+  <section class="section section-light" id="rsvp">
+    <h2 class="title-script">Confirmación de asistencia</h2>
+   
+    <form class="rsvp-form">
+        <div class="buttons-row">
+          <button type="button" class="btn main" id="btnConfirmar">Confirmar</button>
+      </div>
+    </form>
+  </section>
+  <audio id="bgMusic" src="audio/cancion.mp3" preload="auto" loop></audio>
+  <script src="js/main.js"></script>
+</body>
+</html>
