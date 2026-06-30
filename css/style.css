@@ -1,0 +1,714 @@
+:root {
+  --bg-dark: #111111;
+  --bg-light: #181818;
+  --accent: #f3b8c4;
+  --accent-soft: #f9d6dd;
+  --text-main: #ffffff;
+  --text-muted: #cccccc;
+}
+
+/* Tipografía general y body */
+body {
+  margin: 0;
+  font-family: 'Didact Gothic', sans-serif;
+  background: #000;
+  color: var(--text-main);
+  font-size: 18px;
+}
+
+/* Secciones */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+.butterfly-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;              /* no bloquea clics */
+  background-image: url('../img/fondo15amariposas.png');
+  background-repeat: repeat;
+  background-size: 1200px auto;
+  mix-blend-mode: screen;            /* opcional, para efecto brillante */
+  opacity: 0.45;
+  animation: butterflies 40s linear infinite;
+  z-index: 0;                        /* por detrás del contenido */
+}
+
+/* asegura que el resto del contenido quede encima */
+body > *:not(.butterfly-layer) {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes butterflies {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100px -150px;
+  }
+  100% {
+    background-position: 0 -300px;
+  }
+}
+.butterflies {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;   /* no bloquean clics */
+  z-index: 2;
+}
+
+.butterfly {
+  position: absolute;
+  font-size: 32px;        /* tamaño base, ajusta al gusto */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  opacity: 0.9;
+}
+.butterfly img {
+  width: 56px;   /* tamaño visible */
+  height: auto;
+}
+
+/* Trayectorias diferentes para cada mariposa */
+.b1 {
+  left: 10%;
+  bottom: -10%;
+  animation-name: fly1;
+  animation-duration: 26s;
+}
+
+.b2 {
+  left: 60%;
+  bottom: -15%;
+  animation-name: fly2;
+  animation-duration: 30s;
+}
+
+.b3 {
+  left: 30%;
+  bottom: -20%;
+  animation-name: fly3;
+  animation-duration: 24s;
+}
+
+.b4 {
+  left: 80%;
+  bottom: -12%;
+  animation-name: fly4;
+  animation-duration: 32s;
+}
+
+/* Curvas de vuelo */
+@keyframes fly1 {
+  0%   { transform: translate(0, 0)        rotate(0deg);    opacity: 0;   }
+  10%  { opacity: 1; }
+  25%  { transform: translate(40px,-120px) rotate(-10deg); }
+  50%  { transform: translate(-30px,-260px) rotate(8deg);  }
+  75%  { transform: translate(60px,-380px) rotate(-6deg);  }
+  100% { transform: translate(0,-520px)    rotate(0deg);   opacity: 0; }
+}
+
+@keyframes fly2 {
+  0%   { transform: translate(0, 0)         rotate(0deg);   opacity: 0;  }
+  10%  { opacity: 1; }
+  30%  { transform: translate(-60px,-150px) rotate(12deg); }
+  55%  { transform: translate(30px,-300px)  rotate(-8deg); }
+  80%  { transform: translate(-40px,-430px) rotate(4deg);  }
+  100% { transform: translate(0,-560px)     rotate(0deg);  opacity: 0; }
+}
+
+@keyframes fly3 {
+  0%   { transform: translate(0, 0)        rotate(0deg);   opacity: 0;  }
+  15%  { opacity: 1; }
+  35%  { transform: translate(50px,-140px) rotate(-8deg); }
+  60%  { transform: translate(-40px,-280px) rotate(10deg); }
+  85%  { transform: translate(30px,-420px) rotate(-5deg); }
+  100% { transform: translate(0,-560px)    rotate(0deg);  opacity: 0; }
+}
+
+@keyframes fly4 {
+  0%   { transform: translate(0, 0)        rotate(0deg);   opacity: 0;  }
+  20%  { opacity: 1; }
+  40%  { transform: translate(-50px,-160px) rotate(6deg); }
+  65%  { transform: translate(40px,-310px)  rotate(-10deg);}
+  90%  { transform: translate(-30px,-460px) rotate(6deg); }
+  100% { transform: translate(0,-600px)    rotate(0deg);  opacity: 0; }
+}
+.butterfly img {
+  width: 48px;
+  height: auto;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 90vh;                /* más alto */
+  max-height: 900px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+
+  background-image: url('../img/foto3.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.10),
+    rgba(0, 0, 0, 0.45)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  padding-bottom: 60px;
+  max-width: 90vw;             /* evita salir del marco en móvil */
+}
+
+.hero-subtitle {
+  font-family: 'Kaushan Script','Kaushan Script Fallback', normal;
+  font-size: 40px;
+  color: #ffffff;
+  margin: 0 0 4px;
+  letter-spacing: 1px;
+}
+
+.hero-name {
+  font-family: 'Great Vibes','Great Vibes Fallback';
+  font-weight: 400;
+  font-size: 74px;
+  font-style: normal;
+  margin: 0 0 8px;
+  line-height: 1.05;
+}
+
+.hero-time,
+.hero-date {
+  font-family: 'Great Vibes', 'Great Vibes Fallback';
+  font-size: 26px;
+  color: #ffffff;
+  margin: 0;
+  font-size: 35px;
+}
+
+/* Títulos script */
+.title-script {
+  font-family: 'Great Vibes','Great Vibes Fallback';
+  font-size: 72px;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--accent-soft);
+}
+
+/* Texto pequeño y links */
+.text-small {
+  font-size: 42px;
+  color: #ffffff;
+  font-family: 'Kaushan Script','Kaushan Script Fallback';
+}
+
+.text-link {
+  font-size: 28px;
+  color: var(--text-muted);
+  text-decoration: underline;
+  font-family: 'Kaushan Script','Kaushan Script Fallback';
+}
+
+/* botón que parece link */
+.link-like {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: #ffffff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Modal vestimenta */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal:not(.hidden) {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: transparent;
+}
+
+.modal-content img {
+  max-width: 400px;
+  max-height: 70vh;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.modal-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 28px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Mapa */
+.map-placeholder {
+  margin: 30px auto 0;
+  max-width: 800px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #333;
+  padding: 20px;
+}
+
+/* Galería apilada draggable */
+.draggable-stack {
+  position: relative;
+  width: 320px;
+  height: 460px;
+  margin: 0 auto;
+}
+
+.draggable-stack .card-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  border: 8px solid #ffffff;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.9);
+  cursor: grab;
+  transition: transform 0.25s ease;
+}
+
+/* imágenes optimizadas */
+.card-photo-1 { background-image: url('../img/1.webp'); }
+.card-photo-2 { background-image: url('../img/2.webp'); }
+.card-photo-3 { background-image: url('../img/3.webp'); }
+.card-photo-4 { background-image: url('../img/foto4.webp'); }
+.card-photo-5 { background-image: url('../img/foto6.webp'); }
+.card-photo-6 { background-image: url('../img/foto7.webp'); }
+
+/* orden inicial: 1 fondo, 5 arriba */
+/* estilo tipo polaroids una sobre otra */
+.draggable-stack .card-photo:nth-child(1) {
+  transform: translate(-20px, 15px) rotate(-6deg) scale(0.95); 
+  z-index: 1;
+}
+
+.draggable-stack .card-photo:nth-child(2) {
+  transform: translate(14px, 10px) rotate(4deg) scale(0.97);
+  z-index: 2;
+}
+
+.draggable-stack .card-photo:nth-child(3) {
+  transform: translate(-10px, 5px) rotate(-2deg) scale(0.99);
+  z-index: 3;
+}
+
+.draggable-stack .card-photo:nth-child(4) {
+  transform: translate(8px, 0px) rotate(3deg) scale(1.01);
+  z-index: 4;
+}
+
+.draggable-stack .card-photo:nth-child(5) {
+  transform: translate(6px, 0px) rotate(-1deg) scale(0.93);
+  z-index: 5;
+}
+.draggable-stack .card-photo:nth-child(6) {
+  transform: translate(0, 0) rotate(0deg) scale(1.03);
+  z-index: 6;
+}
+
+/* Franja inferior "desliza para ver más" */
+.swipe-hint {
+  margin-top: 40px;
+  padding: 16px 20px;
+  background: #b39990;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Kaushan Script','Kaushan Script Fallback';
+  font-size: 18px;
+}
+
+.swipe-icon {
+  font-size: 24px;
+}
+
+.swipe-text {
+  white-space: nowrap;
+}
+
+/* centrado dentro de la sección */
+#galeria {
+  text-align: center;
+}
+
+/* Itinerario tipo izquierda / derecha */
+.fancy-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto 0;
+  padding: 40px 0;
+}
+
+/* línea central */
+.fancy-timeline .center-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent-soft);
+  transform: translateX(-50%);
+}
+
+/* cada fila */
+.timeline-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  font-family: 'Kaushan Script','Kaushan Script Fallback';
+  color: #ffffff;
+}
+
+/* puntos de la línea */
+.timeline-row .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  z-index: 2;
+}
+
+/* bloque de hora + texto */
+.timeline-row .time-block {
+  max-width: 260px;
+}
+
+.timeline-row .time {
+  display: block;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.timeline-row .label {
+  display: block;
+  font-size: 16px;
+}
+
+/* icono a los lados */
+.timeline-row .icon {
+  font-size: 24px;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* filas a la izquierda */
+.timeline-row.left {
+  justify-content: flex-end;
+  gap: 18px;
+  padding-right: 50%;
+}
+
+.timeline-row.left .time-block { order: 1; text-align: right; }
+.timeline-row.left .dot        { order: 2; }
+.timeline-row.left .icon       { order: 3; }
+
+/* filas a la derecha */
+.timeline-row.right {
+  justify-content: flex-start;
+  gap: 18px;
+  padding-left: 50%;
+}
+
+.timeline-row.right .icon       { order: 1; }
+.timeline-row.right .dot        { order: 2; }
+.timeline-row.right .time-block { order: 3; text-align: left; }
+
+/* título centrado alterno si quieres usarlo */
+.title2-script {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+  font-family: 'Kaushan Script','Kaushan Script Fallback';
+  color: var(--accent-soft);
+  font-size: 70px;
+}
+
+/* Contador en tarjetas */
+.countdown-cards {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.count-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.count-number {
+  width: 70px;
+  height: 100px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Great Vibes', 'Great Vibes Fallback', cursive;
+  font-size: 32px;
+  color: #000;
+}
+
+.count-label {
+  font-family: 'Kaushan Script','Kaushan Script Fallback';
+  font-size: 20px;
+  color: #ffffff;
+}
+
+/* Formularios y botones */
+.rsvp-form {
+  max-width: 500px;
+  margin: 20px auto 0;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #111;
+  color: var(--text-main);
+  margin-bottom: 20px;
+}
+
+.buttons-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* estilo base de los botones RSVP */
+.btn {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  font-family: 'Didact Gothic', system-ui, sans-serif;
+  background: var(--accent-soft);
+  color: #000;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+/* todos del mismo color pastel */
+.btn.main,
+.btn.secondary,
+.btn.ghost {
+  background: var(--accent-soft);
+  color: #000;
+}
+
+/* último como enlace subrayado */
+.btn.ghost-link {
+  text-decoration: underline;
+  background: var(--accent-soft);
+}
+
+/* hover suave */
+.btn:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Icono pin (mapa) */
+.pin {
+  display: inline-block;
+  width: 18px;
+  height: 24px;
+  border-radius: 50% 50% 50% 0;
+  background: #f3b8c4;
+  transform: rotate(-45deg);
+  position: relative;
+}
+
+.pin::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #000;
+}
+
+/* Icono gancho vestimenta */
+.icon-wrapper {
+  margin-bottom: 4px;
+}
+
+.icon-hanger {
+  display: inline-block;
+  font-size: 26px;
+  color: #f3b8c4;
+  transform: translateY(-4px);
+}
+
+/* BREAKPOINTS / RESPONSIVE */
+
+/* Pantallas grandes */
+@media (max-width: 700px) {
+  .section {
+    padding: 40px 18px;
+  }
+
+  .hero {
+    height: 90vh;              /* casi toda la pantalla en móvil */
+    max-height: none;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .hero-content {
+    padding-bottom: 50px;
+    max-width: 92vw;
+  }
+
+  .hero-subtitle { font-size: 34px; }
+  .hero-name     { font-size: 68px; }
+  .hero-time,
+  .hero-date     { font-size: 30px; }
+}
+
+  /* Textos generales */
+  .text-small {
+    font-size: 42px;
+  }
+
+  .title-script {
+    font-size: 70px;      /* “Itinerario”, “Confirmación de asistencia”, etc. */
+  }
+
+  /* Itinerario */
+  .timeline-row .time {
+    font-size: 44px;
+  }
+
+  .timeline-row .label {
+    font-size: 40px;
+  }
+
+  /* Contador */
+  .count-number {
+    width: 70px;
+    height: 100px;
+    font-size: 44px;
+  }
+
+  .count-label {
+    font-size: 20px;
+  }
+
+  /* Botones */
+  .btn {
+    font-size: 20px;
+    padding: 16px 20px;
+  }
+
+  .draggable-stack {
+    position: relative;
+    width: 600px;     /* antes 320 */
+    height: 800px;    /* antes 460 */
+    margin: 0 auto;
+  }
+
+  .draggable-stack .card-photo {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 18px;   /* un poco más redondeado */
+    border: 10px solid #ffffff;
+    box-shadow: 0 22px 55px rgba(0,0,0,0.9);
+    cursor: grab;
+    transition: transform 0.25s ease;
+  }
+
+  .buttons-row {
+    gap: 12px;
+  }
+
+  /* Itinerario en una columna */
+  .fancy-timeline {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .fancy-timeline .center-line {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-row {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .timeline-row .time-block {
+    text-align: left !important;
+  }
+
+  .timeline-row .icon {
+    display: none;
+  }
+  @media (max-width: 600px) {
+    .hero-content {
+      transform: translateY(20px);
+    }
+  }
+
+
